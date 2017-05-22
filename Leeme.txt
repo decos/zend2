@@ -1,0 +1,12 @@
+--  AGREGAR NUEVOS CONTROLADORES
+	C:\xampp\htdocs\zend2\module\Application\config\module.config.php
+	
+-- AGREGAR NUEVAS RUTAS
+	C:\xampp\htdocs\zend2\module\Application\config\module.config.php
+	TIPOS:
+		- Literal = Ruta Fija
+		- Segment = Te permite agregar nuevos parametros por la URL de forma sencilla
+		
+	PARAMETROS
+		- [/:id][/:id2] es distinto que
+		- [/:id/:id2] 

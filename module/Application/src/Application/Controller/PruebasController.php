@@ -12,15 +12,19 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController
+class PruebasController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        
+        $id = $this->params()->fromRoute("id", "POR DEFECTO");
+        $id2 = $this->params()->fromRoute("id2", "POR DEFECTO 2");
+        
+        return new ViewModel(array(
+            "texto" => "Vista del nuevo metodo action del nuevo controlador",
+            "id" => $id,
+            "id2" => $id2,
+        ));
     }
     
-    public function helloWorldAction(){
-        echo "hola mundo! bienvenido al curso de zend framework 2";
-        die();
-    }
 }

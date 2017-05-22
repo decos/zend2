@@ -52,6 +52,22 @@ return array(
                     ),
                 ),
             ),
+            "prueba" => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/prueba[/:id/:id2]',
+                    'constraints' => array(
+                        'id' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id2'     => '[0-9_-]*',
+                    ),
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Pruebas',
+                        'action'        => 'index',
+                    ),
+                ),
+            ),
+            
         ),
     ),
     'service_manager' => array(
@@ -75,7 +91,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => Controller\IndexController::class
+            'Application\Controller\Index' => Controller\IndexController::class,
+            'Application\Controller\Pruebas' => Controller\PruebasController::class,
         ),
     ),
     'view_manager' => array(
