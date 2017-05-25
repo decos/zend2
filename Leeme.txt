@@ -20,3 +20,5 @@
 	Aqui se define todo el tema de las plantillas
 	/opt/lampp/htdocs/zend2/module/Application/config/module.config.php (view_manager)
 
+	
+
