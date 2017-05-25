@@ -1,0 +1,5 @@
+Instalacion de ZEND 2.5 (linux)
+	1. Descargar ZEND  de la siguiente ruta
+		http://victorroblesweb.es/wp-content/uploads/2014/03/ZendSkeletonApplication-master.zip
+	2. Localizar el proyecto en /opt/lampp/htdocs
+	3. Actualizar las dependencias usando el comando "composer install"
