@@ -26,5 +26,8 @@ Instalacion de ZEND 2.5 (linux)
 	Aqui se define todo el tema de las plantillas
 	/opt/lampp/htdocs/zend2/module/Application/config/module.config.php (view_manager)
 
+-- MODULOS
+	Puedes crearlo de forma manual o ingresando a la siguiente URL
+	https://github.com/zendframework/ZendSkeletonModule
 	
 

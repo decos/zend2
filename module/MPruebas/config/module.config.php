@@ -7,31 +7,18 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application;
+namespace MPruebas;
 
 return array(
     'router' => array(
         'routes' => array(
-            'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/',
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            'application' => array(
+            
+            'mpruebas' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/application',
+                    'route'    => '/mpruebas',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
+                        '__NAMESPACE__' => 'MPruebas\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
                     ),
@@ -49,21 +36,6 @@ return array(
                             'defaults' => array(
                             ),
                         ),
-                    ),
-                ),
-            ),
-            "prueba" => array(
-                'type' => 'Segment',
-                'options' => array(
-                    'route'    => '/prueba[/:id/:id2]',
-                    'constraints' => array(
-                        'id' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id2'     => '[0-9_-]*',
-                    ),
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Pruebas',
-                        'action'        => 'index',
                     ),
                 ),
             ),
@@ -91,8 +63,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => Controller\IndexController::class,
-            'Application\Controller\Pruebas' => Controller\PruebasController::class,
+            'MPruebas\Controller\Index' => Controller\IndexController::class,
         ),
     ),
     'view_manager' => array(
