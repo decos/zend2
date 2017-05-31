@@ -1,0 +1,33 @@
+Instalacion de ZEND 2.5 (linux)
+	1. Descargar ZEND  de la siguiente ruta
+		http://victorroblesweb.es/wp-content/uploads/2014/03/ZendSkeletonApplication-master.zip
+	2. Localizar el proyecto en /opt/lampp/htdocs
+	3. Actualizar las dependencias usando el comando "composer install"
+
+-- AGREGAR NUEVOS CONTROLADORES
+	C:\xampp\htdocs\zend2\module\Application\config\module.config.php
+	
+-- AGREGAR NUEVAS RUTAS
+	C:\xampp\htdocs\zend2\module\Application\config\module.config.php
+	TIPOS:
+		- Literal = Ruta Fija
+		- Segment = Te permite agregar nuevos parametros por la URL de forma sencilla
+		
+	PARAMETROS
+		- [/:id][/:id2] es distinto que
+		- [/:id/:id2] 
+
+-- REDIRECCIONES
+	return $this->redirect()->toRoute("home");
+	return $this->redirect()->toUrl( $this->getRequest()->getBaseUrl() );
+	return $this->redirect()->toUrl("http://www.google.com");
+
+-- PLANTILLAS
+	Aqui se define todo el tema de las plantillas
+	/opt/lampp/htdocs/zend2/module/Application/config/module.config.php (view_manager)
+
+-- MODULOS
+	Puedes crearlo de forma manual o ingresando a la siguiente URL
+	https://github.com/zendframework/ZendSkeletonModule
+	
+
