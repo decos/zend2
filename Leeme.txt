@@ -1,4 +1,4 @@
-Instalacion de ZEND 2.5 (linux)
+Ianstalacion de ZEND 2.5 (linux)
 	1. Descargar ZEND  de la siguiente ruta
 		http://victorroblesweb.es/wp-content/uploads/2014/03/ZendSkeletonApplication-master.zip
 	2. Localizar el proyecto en /opt/lampp/htdocs
@@ -29,5 +29,28 @@ Instalacion de ZEND 2.5 (linux)
 -- MODULOS
 	Puedes crearlo de forma manual o ingresando a la siguiente URL
 	https://github.com/zendframework/ZendSkeletonModule
+
+-- FORMULARIOS
+	1. Crear nueva carpeta
+		/opt/lampp/htdocs/zend2/module/Application/src/Application/Form
+	2. Crear archivo (ejemplo)
+		/opt/lampp/htdocs/zend2/module/Application/src/Application/Form/FormPruebas.php
+	3. Añadir namespace y lo que necesita la clase.
+	4. En el controlador
+		/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/IndexController.php
+	   - Añadir el formulario usando "use"
+	   - Creamos el metodo "formAction"
+	5. Creamos la vista
+           	/opt/lampp/htdocs/zend2/module/Application/view/application/index/form.phtml
+	   - Aquí se pueden definir atributos ($form->setAttributes)
+           - Pintar el formulario
+		echo $this->form()->openTag($form);
+	   - Pintar el label
+		echo $formLabel->openTag().$nombre->getOption("label")." ";
+	   - Pintar el input
+		echo $this->formInput($nombre);
+ 	   - Cerramos el label
+		echo $formLabel->closeTag();
+		
 	
 

@@ -14,6 +14,7 @@ class FormPruebas extends Form{
         //Constructor del Padre tendra el nombre que le pasemos
         parent::__construct($name); 
         
+        //Primer campo creado
         $this->add(array(
             "name" => "nombre",
             "options" => array(
@@ -24,7 +25,10 @@ class FormPruebas extends Form{
                 "class" => "form-control"
             )
         ));
+        //
         
+        //Segundo campo creado
+        //Tambien se puede usar el "factory"
         $factory = new Factory;
         $email = $factory->createElement(array(
             "type" => "Zend\Form\Element\Email",
@@ -37,9 +41,10 @@ class FormPruebas extends Form{
                 "id" => "email-input"
             )
         ));
-        
         $this->add($email);
+        //
         
+        //Tercer campo creado
         $this->add(array(
             "name" => "submit",
             "attributes" => array(
@@ -48,5 +53,6 @@ class FormPruebas extends Form{
                 "title" => "Enviar"
             )
         ));
+        //
     }
 }

@@ -11,16 +11,26 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Application\Form\FormPruebas;
 
 class IndexController extends AbstractActionController
 {
-    public function indexAction()
-    {
-        return new ViewModel();
-    }
-    
-    public function helloWorldAction(){
-        echo "hola mundo! bienvenido al curso de zend framework 2";
-        die();
-    }
+        public function indexAction()
+        {
+                //echo "index"; die();
+                return new ViewModel();
+        }
+
+        public function helloWorldAction(){
+                echo "hola mundo! bienvenido al curso de zend framework 2";
+                die();
+        }
+        
+        public function formAction(){
+                $form = new FormPruebas("form");
+                return new ViewModel(array(
+                        "title" => "Formularios con Zend Framework 2",
+                        "form" => $form
+                ));
+        }
 }

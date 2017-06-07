@@ -1,0 +1,23 @@
+<h1><?php echo $this->title; ?></h1>
+<?php
+$form =  $this->form;
+$form->prepare();
+
+$form->setAttributes(array(
+        "action" => $this->basePath()."/application/index/get-date-form",
+        "method" => "post"
+));
+
+$formLabel = $this->plugin("formLabel");
+
+echo $this->form()->openTag($form);
+?>
+
+<div class="form-element">
+    <?php
+        $nombre = $form->get("nombre");
+        echo $formLabel->openTag().$nombre->getOption("label")." ";
+        echo $this->formInput($nombre);
+        echo $formLabel->closeTag();
+    ?>
+</div>
