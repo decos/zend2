@@ -67,6 +67,17 @@ return array(
                     ),
                 ),
             ),
+            "get-form" => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/get-form',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Index',
+                        'action'        => 'get-form-data',
+                    ),
+                ),
+            ),
             
         ),
     ),

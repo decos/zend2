@@ -33,4 +33,11 @@ class IndexController extends AbstractActionController
                         "form" => $form
                 ));
         }
+        
+        public function getFormDataAction(){
+                
+                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/form");
+        }
+        
+        
 }

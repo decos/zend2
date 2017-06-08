@@ -58,4 +58,7 @@ Ianstalacion de ZEND 2.5 (linux)
 	   - COMO GENERAR EL FORMULARIO ENTERO, EN UNA SOLA LINEA (automatico)
 		echo $this->formCollection($form);
 		
-
+-- RECIBIR DATOS DE FORMULARIO
+	1. Crear ruta en el archivo de configuracion
+	2. Modificar el action del formulario
+	3. Crear la accion en el controlador
