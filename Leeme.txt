@@ -51,6 +51,11 @@ Ianstalacion de ZEND 2.5 (linux)
 		echo $this->formInput($nombre);
  	   - Cerramos el label
 		echo $formLabel->closeTag();
-		
+
+	   - COMO GENERAR EL INPUT ENTERO, EN UNA SOLA LINEA
+		echo $this->formElement($form-get("submit"));
 	
+	   - COMO GENERAR EL FORMULARIO ENTERO, EN UNA SOLA LINEA (automatico)
+		echo $this->formCollection($form);
+		
 

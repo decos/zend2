@@ -7,17 +7,41 @@ $form->setAttributes(array(
         "action" => $this->basePath()."/application/index/get-date-form",
         "method" => "post"
 ));
-
+//Para mostrar el Label
 $formLabel = $this->plugin("formLabel");
-
+//Pintar la etiqueta de apertura del formulario
 echo $this->form()->openTag($form);
 ?>
+<!--
+<div class="form-element">
+        <?php
+                $nombre = $form->get("nombre");
+                echo $formLabel->openTag().$nombre->getOption("label")." ";
+                echo $this->formInput($nombre);
+                echo $formLabel->closeTag();
+        ?>
+</div>
 
 <div class="form-element">
-    <?php
-        $nombre = $form->get("nombre");
-        echo $formLabel->openTag().$nombre->getOption("label")." ";
-        echo $this->formInput($nombre);
-        echo $formLabel->closeTag();
-    ?>
+        <?php
+                $email = $form->get("email");
+                echo $formLabel->openTag().$email->getOption("label")." ";
+                echo $this->formInput($email);
+                echo $formLabel->closeTag();
+        ?>
 </div>
+
+<?php 
+//echo "Nombre: ".$this->formElement($form->get("nombre"));
+//echo "Email: ".$this->formElement($form->get("email"));
+echo $this->formElement($form->get("submit"));
+?>
+-->
+
+<?php 
+echo $this->formCollection($form);
+?>
+
+<?php
+echo $this->form()->closeTag();
+?>

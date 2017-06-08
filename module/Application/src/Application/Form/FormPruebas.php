@@ -16,20 +16,20 @@ class FormPruebas extends Form{
         
         //Primer campo creado
         $this->add(array(
-            "name" => "nombre",
-            "options" => array(
-                "label" => "Nombre: "
-            ),
-            "attributes" => array(
-                "type" => "text",
-                "class" => "form-control"
-            )
+                "name" => "nombre",
+                "options" => array(
+                        "label" => "Nombre: "
+                ),
+                "attributes" => array(
+                        "type" => "text",
+                        "class" => "form-control"
+                )
         ));
         //
         
         //Segundo campo creado
         //Tambien se puede usar el "factory"
-        $factory = new Factory;
+        /*$factory = new Factory;
         $email = $factory->createElement(array(
             "type" => "Zend\Form\Element\Email",
             "name" => "email",
@@ -41,7 +41,17 @@ class FormPruebas extends Form{
                 "id" => "email-input"
             )
         ));
-        $this->add($email);
+        $this->add($email); */
+        $this->add(array(
+                "name" => "email",
+                "options" => array(
+                        "label" => "Email: "
+                ),
+                "attributes" => array(
+                        "type" => "email",
+                        "class" => "form-control"
+                )
+        ));
         //
         
         //Tercer campo creado
