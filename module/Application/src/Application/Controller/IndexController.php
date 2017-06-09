@@ -12,6 +12,10 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Form\FormPruebas;
+//Agregar componentes de validacion
+use Zend\Validator;
+//Validar si es alfanumerico, letra
+use Zend\I18n\Validator as I18nValidator;
 
 class IndexController extends AbstractActionController
 {
@@ -35,8 +39,35 @@ class IndexController extends AbstractActionController
         }
         
         public function getFormDataAction(){
+                if( $this->request->getPost("submit") ){
+                        $data = $this->request->getPost();
+                        
+                        //Validar el mail
+                        $email = new Validator\EmailAddress();
+                        $email->setMessage("El email '%value%' no es correcto ");
+                        $validate_email = $email->isValid($this->request->getPost("email"));
+                        
+                        $alpha = new I18nValidator\Alpha();
+                        $alpha->setMessage("El nombre '%value%' no son solo letras");
+                        $validate_alpha = $alpha->isValid($this->request->getPost("nombre"));
+                        
+                        if($validate_email == true && $validate_alpha == true ){
+                                $validate = "Validación de datos correcta";
+                        }else{
+                                $validate = array(
+                                        $email->getMessages(),
+                                        $alpha->getMessages()
+                                );
+                                var_dump($validate);
+                                die();
+                        }
+                        
+                        var_dump($data);
+                        die();
+                }else{
+                        $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/form");
+                }
                 
-                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/form");
         }
         
         

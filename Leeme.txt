@@ -62,3 +62,8 @@ Ianstalacion de ZEND 2.5 (linux)
 	1. Crear ruta en el archivo de configuracion
 	2. Modificar el action del formulario
 	3. Crear la accion en el controlador
+
+-- VALIDACION DE DATOS SIMPLE
+	1. Incluir componentes de validaciones
+		use Zend\Validator;
+		use Zend\I18n\Validator as I18nValidator;
