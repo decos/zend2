@@ -67,3 +67,20 @@ Ianstalacion de ZEND 2.5 (linux)
 	1. Incluir componentes de validaciones
 		use Zend\Validator;
 		use Zend\I18n\Validator as I18nValidator;
+
+-- VALIDACIONES Y FILTROS
+	1. Para validar, se debe crear en la carpeta Form un nuevo fichero
+	/opt/lampp/htdocs/zend2/module/Application/src/Application/Form/FormPruebasValidator.php
+	
+	FILTROS
+		1. StripTags = Este filtro puede quitar las etiquetas XML y HTML del contenido dado
+		2. StringTrim = Que borre los espacios por delante y detras
+		
+	2. Agregamos la nueva regla de validacion en el formulario
+	/opt/lampp/htdocs/zend2/module/Application/src/Application/Form/FormPruebas.php
+		$this->setInputFilter(new \Application\Form\FormPruebasValidator());
+
+	3. Cambiar el comportamiento que tiene el formulario en el Controlador
+	/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/IndexController.php
+		formAction
+

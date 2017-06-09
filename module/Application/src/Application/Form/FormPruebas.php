@@ -14,6 +14,8 @@ class FormPruebas extends Form{
         //Constructor del Padre tendra el nombre que le pasemos
         parent::__construct($name); 
         
+        $this->setInputFilter(new \Application\Form\FormPruebasValidator());
+        
         //Primer campo creado
         $this->add(array(
                 "name" => "nombre",

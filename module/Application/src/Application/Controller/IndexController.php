@@ -31,11 +31,30 @@ class IndexController extends AbstractActionController
         }
         
         public function formAction(){
-                $form = new FormPruebas("form");
+                /*$form = new FormPruebas("form");
                 return new ViewModel(array(
                         "title" => "Formularios con Zend Framework 2",
                         "form" => $form
-                ));
+                )); */
+            
+                $form = new FormPruebas("form");
+                
+                $view = array(
+                        "title" => "Formularios con Zend Framework 2",
+                        "form" => $form
+                );
+                
+                if($this->request->isPost()){
+                        $form->setData($this->request->getPost());
+                        
+                        //Si el formulario no es valido
+                        if(!$form->isValid()){
+                                $errors = $form->getMessages();
+                                $view["errors"] = $errors;
+                        }
+                }
+                
+                return new ViewModel($view);
         }
         
         public function getFormDataAction(){
