@@ -82,5 +82,13 @@ Ianstalacion de ZEND 2.5 (linux)
 
 	3. Cambiar el comportamiento que tiene el formulario en el Controlador
 	/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/IndexController.php
-		formAction
+
+-- CONFIGURACION DE LA BASE DE DATOS
+	1. Crear el siguiente archivo en la ruta
+		/opt/lampp/htdocs/zend2/config/autoload/local.php
+
+	2. Poner el "service_manager" de la base de datos
+	3. En el "service_manager" se coloca el adaptador que se conecta a la base de datos
+	4. Configuramos la base de datos
+	5. Crear base de datos
 
