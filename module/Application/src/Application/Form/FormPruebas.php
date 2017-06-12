@@ -27,7 +27,6 @@ class FormPruebas extends Form{
                         "class" => "form-control"
                 )
         ));
-        //
         
         //Segundo campo creado
         //Tambien se puede usar el "factory"
@@ -54,9 +53,53 @@ class FormPruebas extends Form{
                         "class" => "form-control"
                 )
         ));
-        //
         
-        //Tercer campo creado
+        //Prueba campo SELECT
+        $this->add(array(
+                'type' => 'Select',
+                'name' => 'activo',
+                'options' => array(
+                        'label' => 'Activo: ',
+                        'value_options' => array(
+                                'si' => 'Si',
+                                'no' => 'No'
+                        ),
+                ),
+                'attributes' => array(
+                        'value' => 'si', //marcar por defecto
+                        'required' => 'required',
+                        'class' => 'form-control'
+                )
+        ));
+        
+        //Prueba campo RADIO
+        $this->add(array(
+                "type" => "radio",
+                "name" => "estado",
+                "options" => array(
+                        'value_options' => array(
+                                'publico' => 'Público',
+                                'seguidores' => 'Solo seguidores'
+                        ),
+                ),
+                "attributes" => array(
+                        "value" => "publico",   //marcar por defecto a publico
+                        "required" => "required"
+                )
+        ));
+        
+        //Prueba campo CHECKBOX
+        $this->add(array(
+                "type" => "Checkbox",
+                "name" => "documento",
+                "options" => array(
+                        "label" => "Documento",
+                        "use_hidden_element" => false, //input hidden
+                        "checked_value" => "si" //valor
+                )
+        ));
+        
+        //Prueba campo SUBMIT
         $this->add(array(
             "name" => "submit",
             "attributes" => array(
@@ -65,6 +108,5 @@ class FormPruebas extends Form{
                 "title" => "Enviar"
             )
         ));
-        //
     }
 }

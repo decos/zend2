@@ -14,7 +14,8 @@ $formLabel = $this->plugin("formLabel");
 //Pintar la etiqueta de apertura del formulario
 echo $this->form()->openTag($form);
 ?>
-<!--
+
+
 <div class="form-element">
         <?php
                 $nombre = $form->get("nombre");
@@ -33,15 +34,35 @@ echo $this->form()->openTag($form);
         ?>
 </div>
 
-<?php 
-//echo "Nombre: ".$this->formElement($form->get("nombre"));
-//echo "Email: ".$this->formElement($form->get("email"));
-echo $this->formElement($form->get("submit"));
-?>
--->
+<div class="form-element">
+        <?php
+                $activo = $form->get("activo");
+                echo $formLabel->openTag().$activo->getOption("label")." ";
+                echo $this->formSelect($activo);
+                echo $formLabel->closeTag();
+        ?>
+</div>
+
+<div class="form-element estado">
+        <?php
+                $estado = $form->get("estado");
+                echo "".$this->formRadio($estado);
+        ?>
+</div>
 
 <?php 
-echo $this->formCollection($form);
+$documento = $form->get('documento');
+echo "<label for='documento'>".$this->formElement($documento)."Documento</label>";
+echo "</br>";
+//echo "Nombre: ".$this->formElement($form->get("nombre"));
+//echo "Email: ".$this->formElement($form->get("email"));
+//echo "Activo: ".$this->formSelect($form->get("activo"));
+echo $this->formElement($form->get("submit"));
+?>
+
+
+<?php 
+//echo $this->formCollection($form);
 ?>
 
 <?php
