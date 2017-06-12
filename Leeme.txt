@@ -92,3 +92,6 @@ Ianstalacion de ZEND 2.5 (linux)
 	4. Configuramos la base de datos
 	5. Crear base de datos
 
+-- MODELOS Y ENTIDADES
+	1. Crear directorio MODEL dentro de SRC/APPLICATION
+

@@ -14,7 +14,8 @@
 return array(
         "service_manager" => array(
                 "factories" => array(
-                        "Zend\Db\Adapter" => "Zend\Db\Adapter\AdapterServiceFactory"
+                        //"Zend\Db\Adapter" => "Zend\Db\Adapter\AdapterServiceFactory" //Antigua Versión
+                        "Zend\Db\Adapter\Adapter" => "Zend\Db\Adapter\AdapterServiceFactory" //Nueva Versión
                 )
         ),
         "db" => array(
