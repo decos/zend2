@@ -94,4 +94,6 @@ Ianstalacion de ZEND 2.5 (linux)
 
 -- MODELOS Y ENTIDADES
 	1. Crear directorio MODEL dentro de SRC/APPLICATION
-	2. 
+	2. Crear la clase Usuario que representara una ENTIDAD
+	3. Crear la clase UsuariosTable que representa el MODELO o conjunto de metodos que iteractuan con la base de datos.
+	4.
