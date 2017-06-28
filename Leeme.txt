@@ -98,5 +98,9 @@ Ianstalacion de ZEND 2.5 (linux)
 	3. Crear la clase UsuariosTable que representa el MODELO o conjunto de metodos que iteractuan con la base de datos.
 	4. Configurar MODULE.PHP para trabajar en conjunto e inyecta datos el uno al otro.
 		Agregar las dependencias
-	5.
+	5. Definir en IndexController un atributo protected y una funcion protected
+		/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/IndexController.php
+		- $usuariosTable (atributo)
+		- getUsuariosTable (function)
+		- listarAction (function)
 		

@@ -19,6 +19,18 @@ use Zend\I18n\Validator as I18nValidator;
 
 class IndexController extends AbstractActionController
 {
+        //Modelos y Entidades
+        protected $usuariosTable;
+        protected function getUsuariosTable(){
+                if(!$this->usuariosTable){
+                        $sm =  $this->getServiceLocator();
+                        $this->usuariosTable = $sm->get("Application\Model\UsuariosTable");
+                }
+                
+                return $this->usuariosTable;
+        }
+        //
+    
         public function indexAction()
         {
                 //echo "index"; die();
@@ -89,5 +101,14 @@ class IndexController extends AbstractActionController
                 
         }
         
+        
+        //Modelos y Entidades
+        public function listarAction(){
+                $usuarios =  $this->getUsuariosTable()->fetchAll();
+                foreach($usuarios as $usuario){
+                        var_dump($usuario); die();
+                }
+        }
+        //
         
 }

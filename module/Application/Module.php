@@ -13,10 +13,10 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
 //Agregar
-use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\ResultSet\ResultSet; //Devolver las cosas de cada registro
 use Zend\Db\TableGateway\TableGateway;
-use Application\Model\Usuario;
-use Application\Model\UsuariosTable;
+use Application\Model\Usuario; //Entidad
+use Application\Model\UsuariosTable; //Operaciones con base de datos
 //
 
 class Module
