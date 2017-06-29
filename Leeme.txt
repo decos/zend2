@@ -103,4 +103,7 @@ Ianstalacion de ZEND 2.5 (linux)
 		- $usuariosTable (atributo)
 		- getUsuariosTable (function)
 		- listarAction (function)
+	
+	ERROR en la funcion getUsuariosTable()
+			SOLUCIÓN: $sm =  $this->serviceLocator;
 		

@@ -23,7 +23,11 @@ class IndexController extends AbstractActionController
         protected $usuariosTable;
         protected function getUsuariosTable(){
                 if(!$this->usuariosTable){
-                        $sm =  $this->getServiceLocator();
+                        //ERROR: Solucionado gracias a:
+                            https://disqus.com/home/discussion/zfmanual/titledatabase_and_models_zend_framework_2_200_documentationtitle/newest/
+                        //$sm =  $this->getServiceLocator();
+                        $sm =  $this->serviceLocator;
+                        //print_r($sm); die();
                         $this->usuariosTable = $sm->get("Application\Model\UsuariosTable");
                 }
                 
