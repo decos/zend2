@@ -30,6 +30,15 @@ class UsuariosTable {
                 return  $row;
         }
         
+         // Obtener un solo usuario por correo
+        public function getUsuarioByEmail($email){
+                
+                $rowset = $this->tableGateway->select(array("email" => $email));
+                $row = $rowset->current();
+                
+                return  $row;
+        }
+        
         public function saveUsuario(Usuario $usuario){
                 $data = array(
                         "name" => $usuario->name,

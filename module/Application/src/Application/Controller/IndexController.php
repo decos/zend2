@@ -108,13 +108,49 @@ class IndexController extends AbstractActionController
         
         //Modelos y Entidades
         public function listarAction(){
+                //Obtener todos los usarios
                 $usuarios =  $this->getUsuariosTable()->fetchAll();
+                
                 foreach($usuarios as $usuario){
                         var_dump($usuario);
                 }
+            
+                //Obtener al usuario con id 2
+                /*
+                $usuario =  $this->getUsuariosTable()->getUsuario(2);
+                var_dump($usuario);
+                */
                 
                  die();
         }
+        
+        public function addAction(){
+                
+                $usuario = new \Application\Model\Usuario();
+                
+                $data = array(
+                        "name" => "Luis",
+                        "surname" => "Abanto",
+                        "description" => "Soy Luis",
+                        "email" => "labanto@gmail.com",
+                        "password" => "labanto",
+                        "image" => null,
+                        "alternative" => null,
+                );
+                 
+                $usuario->exchangeArray($data);
+                
+                $usuario_by_email = $this->getUsuariosTable()->getUsuarioByEmail($data['email']);
+                
+                if($usuario_by_email){
+                        $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/listar");
+                } else{
+                        $save = $this->getUsuariosTable()->saveUsuario($usuario);
+                }
+                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/listar");
+                
+        }
+        
         //
         
 }

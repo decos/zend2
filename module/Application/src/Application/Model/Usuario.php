@@ -14,7 +14,7 @@ class Usuario{
                 $this->surname = (!empty($data['surname']) ? $data['surname'] : null );
                 $this->description = (!empty($data['description']) ? $data['description'] : null );
                 $this->email = (!empty($data['email']) ? $data['email'] : null );
-                $this->password = (!empty($data['password']) ? $data['id'] : null );
+                $this->password = (!empty($data['password']) ? $data['password'] : null );
                 $this->image = (!empty($data['image']) ? $data['image'] : null );
                 $this->alternative = (!empty($data['alternative']) ? $data['alternative'] : null );
         }
