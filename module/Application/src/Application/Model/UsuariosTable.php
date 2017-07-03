@@ -34,12 +34,20 @@ class UsuariosTable {
                 /*$query = $this->dbAdapter->createStatement("SELECT * FROM usuarios;");
                 $data = $query->execute();
                 return $data;
-                */
-            
+                
                 //Es lo mismo hacer esto
                 $consulta = $this->dbAdapter->query("SELECT * FROM usuarios", Adapter::QUERY_MODE_EXECUTE);
                 $datos = $consulta->toArray();
-                return $datos;
+                return $datos;*/
+            
+                //QUERY BUILDER (array)
+                $sql = new SQL($this->dbAdapter);
+                $select = $sql->select();
+                $select->from("usuarios");
+                
+                $statement = $sql->prepareStatementForSqlObject($select);
+                $data = $statement->execute();
+                return $data;
         }
         
         // Obtener un solo usuario

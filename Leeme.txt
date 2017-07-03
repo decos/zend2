@@ -108,10 +108,22 @@ Ianstalacion de ZEND 2.5 (linux)
 			SOLUCIÓN: $sm =  $this->serviceLocator;
 		
 -- CONSULTAS SQL NATIVO
+	
 	protected $dbAdapter;
 	$this->dbAdapter = $tableGateway->adapter;
 	fetchAllSql
 	/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
+
 	listarAction
 	/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/IndexController.php
+
+-- QUERY BUILDER
+	- Cualquier tipo de consultas, puedes hacer JOINS.
+	- Esta mas abstraido del codigo SQL.
+	- Es mas flexible si cambias de base de datos.
+
+	fetchAllSql
+	/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
+	
+	
 	
