@@ -4,12 +4,21 @@ namespace Application\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 
+//CONSULTAS SQL NATIVO
+use Zend\Db\Adapter\Adapter;
+use Zend\Db\Sql\Sql;
+use Zend\Db\Sql\Select;
+
 class UsuariosTable {
     
         protected $tableGateway;
+        //CONSULTAS SQL NATIVO
+        protected $dbAdapter;
 
         public function __construct(TableGateway $tableGateway) {
                 $this->tableGateway = $tableGateway;
+                //CONSULTAS SQL NATIVO
+                $this->dbAdapter = $tableGateway->adapter;
         }
         
         // 1. Entrar al TableGateway
@@ -18,6 +27,19 @@ class UsuariosTable {
         public function fetchAll(){
                 $resultSet =  $this->tableGateway->select();
                 return $resultSet;
+        }
+        
+        //CONSULTAS SQL NATIVO
+        public function fetchAllSql(){
+                /*$query = $this->dbAdapter->createStatement("SELECT * FROM usuarios;");
+                $data = $query->execute();
+                return $data;
+                */
+            
+                //Es lo mismo hacer esto
+                $consulta = $this->dbAdapter->query("SELECT * FROM usuarios", Adapter::QUERY_MODE_EXECUTE);
+                $datos = $consulta->toArray();
+                return $datos;
         }
         
         // Obtener un solo usuario

@@ -108,9 +108,15 @@ class IndexController extends AbstractActionController
         
         //Modelos y Entidades
         public function listarAction(){
-                //Obtener todos los usarios
+                //Obtener todos los usarios (objetos)
+                /*
                 $usuarios =  $this->getUsuariosTable()->fetchAll();
-                
+                foreach($usuarios as $usuario){
+                        var_dump($usuario);
+                }*/
+            
+                //CONSULTAS SQL NATIVO (array)
+                $usuarios =  $this->getUsuariosTable()->fetchAllSql();
                 foreach($usuarios as $usuario){
                         var_dump($usuario);
                 }
