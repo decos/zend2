@@ -110,8 +110,10 @@ class IndexController extends AbstractActionController
         public function listarAction(){
                 $usuarios =  $this->getUsuariosTable()->fetchAll();
                 foreach($usuarios as $usuario){
-                        var_dump($usuario); die();
+                        var_dump($usuario);
                 }
+                
+                 die();
         }
         //
         
