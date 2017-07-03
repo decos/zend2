@@ -125,5 +125,6 @@ Ianstalacion de ZEND 2.5 (linux)
 	fetchAllSql
 	/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
 	
+-- CONVERTIR UN ARRAY DEL COMPONENTE RESULT SET EN UN ARRAY DE OBJETOS
 	
 	

@@ -9,6 +9,9 @@ use Zend\Db\Adapter\Adapter;
 use Zend\Db\Sql\Sql;
 use Zend\Db\Sql\Select;
 
+//CONVERTIR UN ARRAY DEL COMPONENTE RESULT SET EN UN ARRAY DE OBJETOS
+use Zend\Db\ResultSet\ResultSet;
+
 class UsuariosTable {
     
         protected $tableGateway;
@@ -47,6 +50,12 @@ class UsuariosTable {
                 
                 $statement = $sql->prepareStatementForSqlObject($select);
                 $data = $statement->execute();
+                
+                //CONVERTIR UN ARRAY DEL COMPONENTE RESULT SET EN UN ARRAY DE OBJETOS
+                $resultSet = new ResultSet();
+                $data = $resultSet->initialize($data);
+                //
+                
                 return $data;
         }
         
