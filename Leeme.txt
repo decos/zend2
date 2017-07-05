@@ -156,3 +156,15 @@ Ianstalacion de ZEND 2.5 (linux)
 		3. Configurar la funcion getUsuariosTable()
 		4. Configurar la siguiente vista:
 			/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo/index.phtml
+
+	-- AÑADIR USUARIOS
+		1. Agregamos el boton "Agregar usuario" a la vista
+		2. Agregamos  la función "addAction" al controlador
+		3. Creamos el formulario
+			/opt/lampp/htdocs/zend2/module/Application/src/Application/Form/FormAddUsuarios.php
+		4. Creamos la vista
+			/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo/add.phtml
+
+
+
+
