@@ -144,5 +144,9 @@ Ianstalacion de ZEND 2.5 (linux)
 		2. Crear el archivo controlador:
 		/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/EjemploController.php
 
-	--
+	-- EL MODELO
+		Se utilizara el siguiente modelo:
+		/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
+
+		
 	
