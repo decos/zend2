@@ -148,5 +148,11 @@ Ianstalacion de ZEND 2.5 (linux)
 		Se utilizara el siguiente modelo:
 		/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
 
-		
-	
+	-- LISTADO DE USUARIOS
+		1. Crear el directorio de la vista
+			/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo
+		2. Crear el fichero "index.phtml"
+			/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo/index.phtml
+		3. Configurar la funcion getUsuariosTable()
+		4. Configurar la siguiente vista:
+			/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo/index.phtml
