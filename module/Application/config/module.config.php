@@ -122,6 +122,13 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+    //Agregando HELPER
+    'view_helpers' => array(
+            'invokables' => array(
+                    'lowercase' => 'Application\View\Helper\LowerCase',
+            ),
+    ),
+        
     // Placeholder for console routes
     'console' => array(
         'router' => array(

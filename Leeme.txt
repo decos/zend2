@@ -126,5 +126,17 @@ Ianstalacion de ZEND 2.5 (linux)
 	/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
 	
 -- CONVERTIR UN ARRAY DEL COMPONENTE RESULT SET EN UN ARRAY DE OBJETOS
+	$resultSet = new ResultSet();
+        $data = $resultSet->initialize($data);
+
+-- VIEW HELPERS
+	1. Crear directorio /opt/lampp/htdocs/zend2/module/Application/src/Application/View
+	2. Crear directorio /opt/lampp/htdocs/zend2/module/Application/src/Application/View/Helper
+	3. Ejemplo: Crear archivo LowerCase.php
+	4. Agregar el helper al siguiente archivo:
+		/opt/lampp/htdocs/zend2/module/Application/config/module.config.php
+	
+-- EJEMPLO COMPLETO
+	-- RUTAS
 	
 	
