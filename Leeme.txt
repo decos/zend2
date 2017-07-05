@@ -138,5 +138,11 @@ Ianstalacion de ZEND 2.5 (linux)
 	
 -- EJEMPLO COMPLETO
 	-- RUTAS
-	
+		1. Configurar la ruta en el archivo:
+		/opt/lampp/htdocs/zend2/module/Application/config/module.config.php
+
+		2. Crear el archivo controlador:
+		/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/EjemploController.php
+
+	--
 	

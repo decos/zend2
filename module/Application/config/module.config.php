@@ -78,6 +78,21 @@ return array(
                     ),
                 ),
             ),
+            //Ejemplo Completo - Rutas
+            "ejemplo" => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/ejemplo[/[:action][/:id]]',
+                    'constraints' => array(
+                             'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    ),
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Ejemplo',
+                        'action'        => 'index',
+                    ),
+                ),
+            ),
             
         ),
     ),
@@ -104,6 +119,7 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => Controller\IndexController::class,
             'Application\Controller\Pruebas' => Controller\PruebasController::class,
+            'Application\Controller\Ejemplo' => Controller\EjemploController::class,
         ),
     ),
     'view_manager' => array(
