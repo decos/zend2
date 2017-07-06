@@ -14,7 +14,7 @@ class FormAddUsuarios extends Form{
         //Constructor del Padre tendra el nombre que le pasemos
         parent::__construct($name); 
         
-        $this->setInputFilter(new \Application\Form\FormPruebasValidator());
+        $this->setInputFilter(new \Application\Form\FormAddUsuariosValidator());
         
         //Primer campo creado
         $this->add(array(

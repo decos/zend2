@@ -38,6 +38,17 @@ class EjemploController extends AbstractActionController
                         "form" => $form
                 );
                 
+                if($this->request->isPost()){
+                        $form->setData($this->request->getPost()); //recoja todo lo del formulario
+                        
+                        if(!$form->isValid()){
+                                $errors = $form->getMessages();
+                                $view["errors"] = $errors;
+                        } else{
+                                
+                        }
+                }
+                
                 return new ViewModel($view);
         }
     

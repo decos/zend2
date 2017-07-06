@@ -164,7 +164,11 @@ Ianstalacion de ZEND 2.5 (linux)
 			/opt/lampp/htdocs/zend2/module/Application/src/Application/Form/FormAddUsuarios.php
 		4. Creamos la vista
 			/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo/add.phtml
-
+		5. Creamos un validador para el formulario "FormAddUsuariosValidator"
+			/opt/lampp/htdocs/zend2/module/Application/src/Application/Form/FormAddUsuarios.php
+		y Añadimos el siguiente codigo en el formulario:
+			$this->setInputFilter(new \Application\Form\FormAddUsuariosValidator());
+		6.Programar la logica para agregar el registro "addAction" en el controlador
 
 
 
