@@ -197,4 +197,19 @@ Ianstalacion de ZEND 2.5 (linux)
 		4. Codear la funcion "editAction" en nuestro Controlador
 		5. Codear en el fichero "edit.phtml" lo mismo del fichero "add.phtml"
 		
-	-- ELIMINAR USUARIOS
+	-- PAGINACION
+		1. Agregar el componente "DbSelect" y "Paginator"
+		2. Refinar la logica de la funcion "fetchAll()"
+			/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
+		3. Refinar la logica de la funcion "indexAction" que esta en el controlador
+		4. Creamos el directorio PARTIAL en la carpeta de vista
+			/opt/lampp/htdocs/zend2/module/Application/view/partial
+		5. Crear el fichero "paginator.phtml" dentro del directorio "partial" 
+		6. Buscar en google "paginator.phtml zf2" y copiar el codigo "Creating the Pagination Control Partial" demtro de  "paginator.phtml"
+		7. Agregar "paginationControl" en el "index.phtml"
+
+
+
+
+
+

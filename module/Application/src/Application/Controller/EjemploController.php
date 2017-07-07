@@ -24,12 +24,23 @@ class EjemploController extends AbstractActionController
 
         public function indexAction()
         {
-                //echo "Ejemplo";
-                
+                /*
                 $usuarios = $this->getUsuariosTable()->fetchAll();
             
                 return new ViewModel(array(
                         "usuarios" => $usuarios
+                ));
+                 */
+                 
+                //Lo que devuelva tendra paginacion
+                $paginator = $this->getUsuariosTable()->fetchAll(true);
+                //Por defecto apuntara a la pagina 1
+                $paginator->setCurrentPageNumber((int) $this->params()->fromQuery("page", 1));
+                //Ahora le diremos a Paginator el numero de elementos por pagina
+                $paginator->setItemCountPerPage(4);
+                //Renderisamos la vista
+                return new ViewModel(array(
+                        "usuarios" => $paginator
                 ));
         }
     

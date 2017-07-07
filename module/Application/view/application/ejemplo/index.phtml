@@ -35,3 +35,15 @@ echo $flash->render("add_false", array("alert", "alert-danger"));
     <?php } ?>
     
 </table>
+
+<?php 
+echo $this->paginationControl(
+                $this->usuarios,
+                "sliding",
+                "partial/paginator.phtml",
+                array(
+                        "route" => "ejemplo"
+                )
+        );
+?>
+

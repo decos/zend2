@@ -12,6 +12,10 @@ use Zend\Db\Sql\Select;
 //CONVERTIR UN ARRAY DEL COMPONENTE RESULT SET EN UN ARRAY DE OBJETOS
 use Zend\Db\ResultSet\ResultSet;
 
+//PAGINACION
+ use Zend\Paginator\Adapter\DbSelect;
+ use Zend\Paginator\Paginator;
+
 class UsuariosTable {
     
         protected $tableGateway;
@@ -27,9 +31,30 @@ class UsuariosTable {
         // 1. Entrar al TableGateway
         // 2. Hacer uso de la entidad usuario
         // 3. Hacer un select y sacar todos los registro de esa tabla
-        public function fetchAll(){
+        public function fetchAllOld(){
                 $resultSet =  $this->tableGateway->select();
                 return $resultSet;
+        }
+        
+        public function fetchAll($paginated=false){
+                if($paginated){
+                        $select = new Select("usuarios");
+                        $resultSetPrototype = new ResultSet();
+                        $resultSetPrototype->setArrayObjectPrototype(new Usuario());
+                        
+                        $paginatorAdapter = new DbSelect(
+                                $select,
+                                $this->tableGateway->getAdapter(), //conector con la base de datos
+                                $resultSetPrototype //prototipo que nos da la entidad
+                        );
+                        
+                        $paginator = new Paginator($paginatorAdapter);
+                        
+                        return $paginator;
+                } else{
+                        $resultSet =  $this->tableGateway->select();
+                        return $resultSet;
+                }
         }
         
         //CONSULTAS SQL NATIVO
