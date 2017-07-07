@@ -17,6 +17,9 @@ use Zend\Validator;
 //Validar si es alfanumerico, letra
 use Zend\I18n\Validator as I18nValidator;
 
+//SESIONES 
+use Zend\Session\Container;
+
 class IndexController extends AbstractActionController
 {
         //Modelos y Entidades
@@ -157,6 +160,26 @@ class IndexController extends AbstractActionController
                 
         }
         
-        //
+        public function sesionesAction(){
+                //-En lugar de hacer esto
+                //$_SESSION["nombre"]  =  "HOLA";
+                $sesion = new Container("sesion");
+                
+                if(!$sesion->id){
+                        $sesion->id = 1;
+                        $sesion->nombre = "Curso ZF2 Diego Abanto";
+                }
+                return array("sesion" => $sesion->id);
+        }
+        
+        public function addSesionAction(){
+                $sesion =  new Container("sesion");
+                $sesion->id++;
+                /*return $this->redirect()->toRoute("application", array(
+                                "controller" => "index",
+                                "action" => "sesiones"
+                        ));*/
+                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/listar");
+        }
         
 }
