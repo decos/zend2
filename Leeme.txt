@@ -170,5 +170,16 @@ Ianstalacion de ZEND 2.5 (linux)
 			$this->setInputFilter(new \Application\Form\FormAddUsuariosValidator());
 		6.Programar la logica para agregar el registro "addAction" en el controlador
 
+	-- MENSAJES FLASH
+		En el mundo de los Frameworks un Flash o Flash Data es una pequeña sesion que solo
+		se ejecuta una sola vez. Una vez que se muestre se va eliminar.
+		
+		Agregar logica:		
+		/opt/lampp/htdocs/zend2/module/Application/src/Application/Controller/EjemploController.php
+		/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo/index.phtml
 
+		Se puede realizar la configuracion en el config del modulo.
+		https://framework.zend.com/manual/2.3/en/modules/zend.view.helpers.flash-messenger.html
 
+	-- CIFRAR DATOS CON BCRYPT
+		

@@ -67,11 +67,18 @@ class EjemploController extends AbstractActionController
                                 $usuario_by_email = $this->getUsuariosTable()->getUsuarioByEmail($data['email']);
 
                                 if($usuario_by_email){
-                                        $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/ejemplo");
+                                        $this->flashMessenger()->setNamespace("add_false")->addMessage("El usuario NO se ha creado");
                                 } else{
                                         $save = $this->getUsuariosTable()->saveUsuario($usuario);
+                                        //MENSAJES FLASH
+                                        if($save){
+                                                $this->flashMessenger()->setNamespace("add")->addMessage("El usuario se ha creado correctamente");
+                                        } else{
+                                                $this->flashMessenger()->setNamespace("add_false")->addMessage("El usuario NO se ha creado");
+                                        }
+                                        
                                 }
-                                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/ejemplo/add");
+                                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/ejemplo");
 
                             
                         }

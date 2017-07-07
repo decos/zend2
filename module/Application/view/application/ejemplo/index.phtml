@@ -2,6 +2,17 @@
 <hr>
 <a class="btn btn-success" href="<?php echo $this->basePath("/ejemplo/add"); ?>">Crear usuario</a>
 <hr>
+
+<?php 
+$flash = $this->flashMessenger()
+        ->setMessageOpenFormat("<div%s>")
+        ->setMessageSeparatorString("")
+        ->setMessageCloseString("</div>");
+
+echo $flash->render("add", array("alert", "alert-success"));
+echo $flash->render("add_false", array("alert", "alert-danger"));
+?>
+
 <table class="table table-hover table-striped">
     <tr>
         <th>Nombre</th>
