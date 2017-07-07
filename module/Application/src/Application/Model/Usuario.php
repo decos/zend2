@@ -18,4 +18,9 @@ class Usuario{
                 $this->image = (!empty($data['image']) ? $data['image'] : null );
                 $this->alternative = (!empty($data['alternative']) ? $data['alternative'] : null );
         }
+        
+        //Obtiene las propiedades del objeto dado
+        public function getArrayCopy(){
+                return get_object_vars($this);
+        }
 }

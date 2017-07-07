@@ -187,4 +187,13 @@ Ianstalacion de ZEND 2.5 (linux)
 		1. Añadir el componente use Zend\Crypt\Password\Bcrypt;
 		2. Añadir la lógica al metodo del controlador "addAction"
 		
+
+	-- EDITAR USUARIOS
+		
+		1. Añadir el fichero "edit.phtml"
+			/opt/lampp/htdocs/zend2/module/Application/view/application/ejemplo/edit.phtml
+		2. Corregir la funcion ya creada "saveUsuario"
+		3. Añadir el campo oculto "id" al formulario "FormAddUsuarios.php" 
+		4. Codear la funcion "editAction" en nuestro Controlador
+		5. Codear en el fichero "edit.phtml" lo mismo del fichero "add.phtml"
 		

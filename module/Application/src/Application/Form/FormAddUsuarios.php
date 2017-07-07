@@ -16,6 +16,13 @@ class FormAddUsuarios extends Form{
         
         $this->setInputFilter(new \Application\Form\FormAddUsuariosValidator());
         
+        $this->add(array(
+                "name" => "id",
+                "attributes" => array(
+                        "type" => "hidden"
+                )
+        ));
+        
         //Primer campo creado
         $this->add(array(
                 "name" => "name",

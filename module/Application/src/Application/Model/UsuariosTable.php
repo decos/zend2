@@ -95,7 +95,7 @@ class UsuariosTable {
                         $return = $this->tableGateway->insert($data);
                 } else {
                         if($this->getUsuario($id)){
-                                $return = $this->tableGateway->update($data);
+                                $return = $this->tableGateway->update($data, array("id" => $id));
                         } else{
                             throw new \Exception("El usuario no existe");
                         }
