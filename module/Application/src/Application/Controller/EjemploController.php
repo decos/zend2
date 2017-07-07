@@ -38,14 +38,42 @@ class EjemploController extends AbstractActionController
                         "form" => $form
                 );
                 
+                //Si nos ha llegado el POST
                 if($this->request->isPost()){
-                        $form->setData($this->request->getPost()); //recoja todo lo del formulario
-                        
+                        //Coger todo lo del post y rellene e formulario
+                        $form->setData($this->request->getPost()); 
+                        //Si el formulario no es valido
                         if(!$form->isValid()){
+                                //Mandame un array con los error
                                 $errors = $form->getMessages();
+                                //En la vista metelo
                                 $view["errors"] = $errors;
                         } else{
                                 
+                                $usuario = new \Application\Model\Usuario();
+                
+                                $data = array(
+                                        "name" => $this->request->getPost("name"),
+                                        "surname" => $this->request->getPost("surname"),
+                                        "description" => $this->request->getPost("description"),
+                                        "email" => $this->request->getPost("email"),
+                                        "password" => $this->request->getPost("password"),
+                                        "image" => null,
+                                        "alternative" => null,
+                                );
+
+                                $usuario->exchangeArray($data);
+
+                                $usuario_by_email = $this->getUsuariosTable()->getUsuarioByEmail($data['email']);
+
+                                if($usuario_by_email){
+                                        $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/ejemplo");
+                                } else{
+                                        $save = $this->getUsuariosTable()->saveUsuario($usuario);
+                                }
+                                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/ejemplo/add");
+
+                            
                         }
                 }
                 

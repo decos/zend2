@@ -37,7 +37,7 @@ class FormAddUsuariosValidator extends InputFilter {
                                 "options" => array(
                                         "messages" => array(
                                                 I18nValidator\Alpha::INVALID => "Tu nombre solo puede tener letras",
-                                                I18nValidator\Alpha::NOT_ALPHA => "Tu nombre solo puede tener letras 2",
+                                                I18nValidator\Alpha::NOT_ALPHA => "Tu nombre solo puede tener letras",
                                                 I18nValidator\Alpha::STRING_EMPTY => "Tu nombre no puede estar vacío",
                                         )
                                 )

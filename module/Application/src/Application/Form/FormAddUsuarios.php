@@ -61,6 +61,16 @@ class FormAddUsuarios extends Form{
                 )
         ));
         
+        $this->add(array(
+                "name" => "password",
+                "options" => array(
+                        "label" => "Contraseña: "
+                ),
+                "attributes" => array(
+                        "type" => "password",
+                        "class" => "form-control"
+                )
+        ));
         
         //Prueba campo SUBMIT
         $this->add(array(
