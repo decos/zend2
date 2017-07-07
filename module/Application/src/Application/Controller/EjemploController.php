@@ -5,6 +5,8 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Form\FormAddUsuarios;
+//CIFRAR DATOS CON BCRYPT
+use Zend\Crypt\Password\Bcrypt;
 
 class EjemploController extends AbstractActionController
 {
@@ -52,12 +54,19 @@ class EjemploController extends AbstractActionController
                                 
                                 $usuario = new \Application\Model\Usuario();
                 
+                                //CIFRAR DATOS CON BCRYPT
+                                $bcrypt = new Bcrypt(array(
+                                        "salt" => "curso_zend_framework_2_victor_robles",
+                                        "cost" => "6",
+                                ));
+                                $password = $bcrypt->create($this->request->getPost("password"));
+                                
                                 $data = array(
                                         "name" => $this->request->getPost("name"),
                                         "surname" => $this->request->getPost("surname"),
                                         "description" => $this->request->getPost("description"),
                                         "email" => $this->request->getPost("email"),
-                                        "password" => $this->request->getPost("password"),
+                                        "password" => $password,
                                         "image" => null,
                                         "alternative" => null,
                                 );

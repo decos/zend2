@@ -182,4 +182,9 @@ Ianstalacion de ZEND 2.5 (linux)
 		https://framework.zend.com/manual/2.3/en/modules/zend.view.helpers.flash-messenger.html
 
 	-- CIFRAR DATOS CON BCRYPT
+		Es importante para mantener la seguridad de la aplicacion.
+
+		1. Añadir el componente use Zend\Crypt\Password\Bcrypt;
+		2. Añadir la lógica al metodo del controlador "addAction"
+		
 		
