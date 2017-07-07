@@ -197,3 +197,4 @@ Ianstalacion de ZEND 2.5 (linux)
 		4. Codear la funcion "editAction" en nuestro Controlador
 		5. Codear en el fichero "edit.phtml" lo mismo del fichero "add.phtml"
 		
+	-- ELIMINAR USUARIOS

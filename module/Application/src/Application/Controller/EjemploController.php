@@ -166,4 +166,22 @@ class EjemploController extends AbstractActionController
                 ));
         }
     
+        public function deleteAction(){
+                //Le pongo 0 para obligarlo a ser 0 por defecto
+                $id = (int) $this->params()->fromRoute("id", 0);
+                
+                if(!$id){
+                        $this->redirect()->toRoute("ejemplo");
+                }else{
+                        $delete = $this->getUsuariosTable()->deleteUsuario($id);
+                        if($delete){
+                                $this->flashMessenger()->setNamespace("add")->addMessage("El usuario se ha borrado correctamente");
+                        } else{
+                                $this->flashMessenger()->setNamespace("add_false")->addMessage("El usuario NO se ha borrado!!!");
+                        }
+                }
+                
+                return $this->redirect()->toRoute("ejemplo");
+        }
+        
 }
