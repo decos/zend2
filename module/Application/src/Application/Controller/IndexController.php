@@ -160,6 +160,7 @@ class IndexController extends AbstractActionController
                 
         }
         
+        //Sesiones Prueba
         public function sesionesAction(){
                 //-En lugar de hacer esto
                 //$_SESSION["nombre"]  =  "HOLA";
@@ -172,6 +173,7 @@ class IndexController extends AbstractActionController
                 return array("sesion" => $sesion->id);
         }
         
+        //Metodo que sea añadir un numero a la sesion
         public function addSesionAction(){
                 $sesion =  new Container("sesion");
                 $sesion->id++;
@@ -179,7 +181,17 @@ class IndexController extends AbstractActionController
                                 "controller" => "index",
                                 "action" => "sesiones"
                         ));*/
-                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/listar");
+                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/sesiones");
+        }
+        
+        public function deleteSesionAction(){
+                $sesion =  new Container("sesion");
+                $sesion->id--;
+                /*return $this->redirect()->toRoute("application", array(
+                                "controller" => "index",
+                                "action" => "sesiones"
+                        ));*/
+                $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/sesiones");
         }
         
 }

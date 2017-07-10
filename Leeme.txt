@@ -208,6 +208,21 @@ Ianstalacion de ZEND 2.5 (linux)
 		6. Buscar en google "paginator.phtml zf2" y copiar el codigo "Creating the Pagination Control Partial" demtro de  "paginator.phtml"
 		7. Agregar "paginationControl" en el "index.phtml"
 
+	-- SESIONES
+		- No sea usa la variable global $_SESSION["nombre"]
+		- Se usan contenedores
+		1. Agregar al controlador el componente "use Zend\Session\Container;"
+		2. Crear el fichero sesiones.phtml para ver el comportamiento de las sesiones.
+			/opt/lampp/htdocs/zend2/module/Application/view/application/index/sesiones.phtml
+		3. Agregar la accion "sesionesAction" al controlador index
+		4. Agregar la accion "addAction" al controlador index
+		5. Agregar la accion "deleteAction" al controlador index
+		
+
+
+
+
+
 
 
 

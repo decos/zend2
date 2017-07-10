@@ -2,5 +2,8 @@
 <hr>
 
 <?php
-    echo $sesion;
+    echo $this->sesion;
 ?>
+
+<a class="btn btn-success" href="<?php echo $this->basePath("application/index/add-sesion"); ?>">Sumar</a>
+<a class="btn btn-danger" href="<?php echo $this->basePath("application/index/delete-sesion"); ?>">Restar</a>
