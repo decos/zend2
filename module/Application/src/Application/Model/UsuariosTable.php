@@ -39,6 +39,7 @@ class UsuariosTable {
         public function fetchAll($paginated=false){
                 if($paginated){
                         $select = new Select("usuarios");
+                        $select->order(array("id DESC"));
                         $resultSetPrototype = new ResultSet();
                         $resultSetPrototype->setArrayObjectPrototype(new Usuario());
                         

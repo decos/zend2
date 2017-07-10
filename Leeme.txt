@@ -217,6 +217,28 @@ Ianstalacion de ZEND 2.5 (linux)
 		3. Agregar la accion "sesionesAction" al controlador index
 		4. Agregar la accion "addAction" al controlador index
 		5. Agregar la accion "deleteAction" al controlador index
+
+	-- AUTENTICACION: Login de Usuarios
+		1. Ordernar el listado a la consulta sql que se hace en el metodo "fetchAll".
+			/opt/lampp/htdocs/zend2/module/Application/src/Application/Model/UsuariosTable.php
+		2. Creamos el formulario "FormLogin"
+			/opt/lampp/htdocs/zend2/module/Application/src/Application/Form/FormLogin.php
+		3. Agregar al controlador "ejemplo" los siguientes componentes:
+			- use Zend\Authentication\AuthenticationService;
+			- use Zend\Authentication\Storage\Session as SessionStorage;
+			- use Zend\Authentication\Adapter\DbTable as AuthAdapter;
+		4.  		 		
+
+
+
+
+
+
+
+
+
+
+
 		
 
 

@@ -1,0 +1,36 @@
+<h1>Identificate</h1>
+<hr>
+
+<?php
+$this->headTitle("Identificate con el login");
+$form = $this->form;
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+
+<div class="errors">
+        <?php echo $this->flashMessenger()->render(); ?>
+</div>
+
+<div class="form_element">
+        <?php 
+                $email = $form->get("email");
+                echo "Correo: ".$this->formInput($email);
+        ?>
+</div>
+
+
+<div class="form_element">
+        <?php
+                $password = $form->get("password");
+                echo "Contraseña: ".$this->formInput($password);
+                //echo $this->formElementsErrors($password); No tiene validaciones el formulario
+        ?>
+</div>
+
+<hr>
+<?php
+        //echo $this->flashMessenger()->render();
+        echo $this->formElement($this->get("submit"));
+        echo $this->form()->closeTag();
+?>

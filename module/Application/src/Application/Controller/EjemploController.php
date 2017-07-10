@@ -5,12 +5,27 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Form\FormAddUsuarios;
-//CIFRAR DATOS CON BCRYPT
+// CIFRAR DATOS CON BCRYPT
 use Zend\Crypt\Password\Bcrypt;
+// SESIONES
+use Zend\Session\Container;
+// AUTENTICACION
+use Zend\Authentication\AuthenticationService;
+use Zend\Authentication\Storage\Session as SessionStorage;
+use Zend\Authentication\Adapter\DbTable as AuthAdapter;
+// FORMULARIO
+use Application\Form\FormLogin;
 
 class EjemploController extends AbstractActionController
 {
-        protected $usuariosTable;   
+        protected $usuariosTable;
+        // AUTENTICACION
+        private $auth;
+        
+        public function __construct() {
+                // AUTENTICACION
+                $this->auth =  new AuthenticationService();
+        }
         
         protected function getUsuariosTable(){
                 if(!$this->usuariosTable){
@@ -195,4 +210,57 @@ class EjemploController extends AbstractActionController
                 return $this->redirect()->toRoute("ejemplo");
         }
         
+        //Crear una accion para el login
+        public function loginAction(){
+                $identity = $this->auth->getStorage()->read();
+                
+                if($identity != false && $identity != null){
+                        return $this->redirect()->toRoute("ejemplo");
+                }
+                
+                //$dbAdapter = $this->getServiceLocator()
+                $dbAdapter = $this->serviceLocator->get("Zend\Db\Adapter\Adapter");
+                
+                //Cargamos el formulario
+                $form =  new FormLogin("login");
+                
+                if($this->request->isPost()){
+                        //      1 Crear la autenticacion
+                        //      2 Le pasamos la conexion a la base de datos
+                        //      3 Le pasamos la tabla de base de datos
+                        //      4 El campo de base de datos que hara de username
+                        //      5 El campo de la base de datos que hara de contraseña
+                        $authAdapter = new AuthAdapter($dbAdapter, "usuarios", "name", "password");
+                        
+                        //CIFRAR DATOS CON BCRYPT
+                        $bcrypt = new Bcrypt(array(
+                                "salt" => "curso_zend_framework_2_victor_robles",
+                                "cost" => "6",
+                        ));
+                        
+                        $password = $bcrypt->create($this->request->getPost("password"));
+                        //Autenticarnos
+                        $authAdapter->setIdentity($this->request->getPost("email"))
+                                            ->setCredential($password);
+                        
+                        $this->auth->setAdapter($authAdapter);
+                        //Identificar al usuario
+                        $result = $this->auth->authenticate();
+                        
+                        if($authAdapter->getResultRowObject() == false){
+                                $this->flashMessenger()->addMessage("Credenciales incorrectas!!");
+                                $this->redirect()->toUrl($this->getRequest()->getBaseUrl() . "/ejemplo/login");
+                        }else{
+                                //Poner dentro de una sesion
+                                $this->auth->getStorage()->write($authAdapter->getResultRowObject());
+                                //Redirigir al listado
+                                $this->redirect()->toRoute("ejemplo");
+                        }
+                       
+                }
+                
+                return array(
+                        "form" => $form
+                );
+        }
 }
