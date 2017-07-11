@@ -234,9 +234,11 @@ Ianstalacion de ZEND 2.5 (linux)
 		6. Configurar "AuthenticationService" 
 			C:\xampp\htdocs\zend2\module\Application\config\module.config.php
 		7. Modificar la accion "index" del controlador "ejemplo" con el fin de no poder entrar al index sin antes ingresar nuestras credenciales.
-			
 
-
+	--AUTORIZACION
+		- ACL: Listas de control de acceso, acceso a los usuarios en ciertas partes de la aplicación.
+		1. Crear el fichero "acl.roles.php" en el directorio config del módulo
+		2. Añadir configuracion en el fichero "Module.php"
 
 
 
