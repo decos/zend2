@@ -240,7 +240,12 @@ Ianstalacion de ZEND 2.5 (linux)
 		1. Crear el fichero "acl.roles.php" en el directorio config del módulo
 		2. Añadir configuracion en el fichero "Module.php"
 
+	--TRADUCIONES CON GETTEXT Y POEDIT
+		1. Modificar el arreglo del parametro "translator"
+			'locale' => 'en_US', // 'es_ES'
+			http://localhost/zend2/public/
 
+		2.
 
 
 
