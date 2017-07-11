@@ -227,9 +227,14 @@ Ianstalacion de ZEND 2.5 (linux)
 			- use Zend\Authentication\AuthenticationService;
 			- use Zend\Authentication\Storage\Session as SessionStorage;
 			- use Zend\Authentication\Adapter\DbTable as AuthAdapter;
-		4.  		 		
-
-
+		4. Crear la vista "login.phtml"
+		5. Modificar la vista "index.html" para agregar el vinculo "Cerrar Sesion" 
+			Helper: $this->identity()
+			Para usar el helper, debemos definir que el Authentication Service siempre estara en funcionamiento en todo el modulo.
+		6. Configurar "AuthenticationService" 
+			C:\xampp\htdocs\zend2\module\Application\config\module.config.php
+		7. Modificar la accion "index" del controlador "ejemplo" con el fin de no poder entrar al index sin antes ingresar nuestras credenciales.
+			
 
 
 

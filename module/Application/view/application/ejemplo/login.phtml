@@ -1,36 +1,40 @@
 <h1>Identificate</h1>
 <hr>
+<div class="col-lg-7">
+    <?php
+    $this->headTitle("Identificate con el login");
+    $form = $this->form;
+    $form->prepare();
+    echo $this->form()->openTag($form);
+    ?>
 
-<?php
-$this->headTitle("Identificate con el login");
-$form = $this->form;
-$form->prepare();
-echo $this->form()->openTag($form);
-?>
-
-<div class="errors">
+    <div class="errors">
         <?php echo $this->flashMessenger()->render(); ?>
-</div>
+    </div>
 
-<div class="form_element">
-        <?php 
-                $email = $form->get("email");
-                echo "Correo: ".$this->formInput($email);
-        ?>
-</div>
-
-
-<div class="form_element">
+    <div class="form_element">
         <?php
-                $password = $form->get("password");
-                echo "Contraseña: ".$this->formInput($password);
-                //echo $this->formElementsErrors($password); No tiene validaciones el formulario
+        $email = $form->get("email");
+        echo "Correo: " . $this->formInput($email);
         ?>
+    </div>
+
+    <br>
+    <div class="form_element">
+        <?php
+        $password = $form->get("password");
+        echo "Contraseña: " . $this->formInput($password);
+        //echo $this->formElementsErrors($password); No tiene validaciones el formulario
+        ?>
+    </div>
+
+    <br>
+    <?php
+    //echo $this->flashMessenger()->render();
+    echo $this->formElement($form->get("submit"));
+    echo $this->form()->closeTag();
+    ?>
+
 </div>
 
-<hr>
-<?php
-        //echo $this->flashMessenger()->render();
-        echo $this->formElement($this->get("submit"));
-        echo $this->form()->closeTag();
-?>
+<div class="clearfix"></div>

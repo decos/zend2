@@ -1,6 +1,11 @@
 <h1>Listado de Usuarios</h1>
 <hr>
 <a class="btn btn-success" href="<?php echo $this->basePath("/ejemplo/add"); ?>">Crear usuario</a>
+<?php if($this->identity()){ ?>
+    <a class="btn btn-danger" href="<?php echo $this->basePath("/ejemplo/logout"); ?>">Cerrar la sesión de 
+    <?php echo $this->identity()->name. " ".$this->identity()->surname." | ".$this->identity()->email ?>
+    </a>
+<?php } ?>
 <hr>
 
 <?php 

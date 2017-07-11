@@ -39,6 +39,13 @@ class EjemploController extends AbstractActionController
 
         public function indexAction()
         {
+                $identity = $this->auth->getIdentity();
+                if($identity != false && $identity != null){
+                    
+                }else{
+                    $this->redirect()->toRoute("ejemplo", array("action" => "login"));
+                }
+            
                 /*
                 $usuarios = $this->getUsuariosTable()->fetchAll();
             
@@ -215,14 +222,14 @@ class EjemploController extends AbstractActionController
                 $identity = $this->auth->getStorage()->read();
                 
                 if($identity != false && $identity != null){
-                        return $this->redirect()->toRoute("ejemplo");
+                    return $this->redirect()->toRoute("ejemplo");
                 }
                 
                 //$dbAdapter = $this->getServiceLocator()
                 $dbAdapter = $this->serviceLocator->get("Zend\Db\Adapter\Adapter");
                 
                 //Cargamos el formulario
-                $form =  new FormLogin("login");
+                $form = new FormLogin("login");
                 
                 if($this->request->isPost()){
                         //      1 Crear la autenticacion
@@ -230,7 +237,7 @@ class EjemploController extends AbstractActionController
                         //      3 Le pasamos la tabla de base de datos
                         //      4 El campo de base de datos que hara de username
                         //      5 El campo de la base de datos que hara de contraseña
-                        $authAdapter = new AuthAdapter($dbAdapter, "usuarios", "name", "password");
+                        $authAdapter = new AuthAdapter($dbAdapter, "usuarios", "email", "password");
                         
                         //CIFRAR DATOS CON BCRYPT
                         $bcrypt = new Bcrypt(array(
@@ -262,5 +269,12 @@ class EjemploController extends AbstractActionController
                 return array(
                         "form" => $form
                 );
+        }
+        
+        //CERRAR SESION
+        public function logoutAction(){
+            $this->auth->clearIdentity();
+            return $this->redirect()->toRoute("ejemplo", 
+                    array("action" => "login"));
         }
 }

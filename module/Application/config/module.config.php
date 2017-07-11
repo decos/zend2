@@ -104,6 +104,10 @@ return array(
         'factories' => array(
             'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',
         ),
+        //AUTENTICACION
+        'invokables' => array(
+            "Zend\Authentication\AuthenticationService" => "Zend\Authentication\AuthenticationService"
+        )
     ),
     'translator' => array(
         'locale' => 'en_US',

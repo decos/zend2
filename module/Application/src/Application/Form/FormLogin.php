@@ -26,6 +26,15 @@ class FormLogin extends Form{
                 ));
                 
                 $this->add(array(
+                        "name" => "password",
+                        "attributes" => array(
+                                "type" => "password",
+                                "class" => "input form-control",
+                                "required" => "required"
+                        )
+                ));
+                
+                $this->add(array(
                         "name" => "submit", 
                         "attributes" => array(
                                 "type" => "submit",
