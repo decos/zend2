@@ -194,4 +194,18 @@ class IndexController extends AbstractActionController
                 $this->redirect()->toUrl($this->getRequest()->getBaseUrl()."/application/index/sesiones");
         }
         
+        public function langAction(){
+                $lang_post = $this->params()->fromPost("lang", "es_ES");
+                $lang =  new Container("lang");
+                
+                $lang->lang = $lang_post;
+                
+                //$translator = $this->getServiceLocator()->get("translator");
+                $translator = $this->serviceLocator->get("translator");
+                $translator->setLocale($lang->lang)->setFallbackLocale($lang->lang);
+                
+                $this->redirect()->toRoute("home");
+                
+        }
+        
 }

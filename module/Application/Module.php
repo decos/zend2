@@ -29,9 +29,13 @@ class Module
                 $moduleRouteListener->attach($eventManager);
                 
                 //AUTORIZACION
-                
                 $this->initAcl($e);
                 $e->getApplication()->getEventManager()->attach("route", array($this, "checkAcl"));
+                
+                //CAMBIAR DE IDIOMA DESDE LA WEB
+                $translator = $e->getApplication()->getServiceManager()->get("translator");
+                $lang = new \Zend\Session\Container("lang");
+                $translator->setLocale($lang->lang)->setFallbackLocale($lang->lang);
         }
 
         //FUNCION 1

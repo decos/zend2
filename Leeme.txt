@@ -271,8 +271,17 @@ Ianstalacion de ZEND 2.5 (linux)
 		4. Crer el fichero "es_ES.php" y configurar el array
 			C:\xampp\htdocs\zend2\module\Application\config\language\es_ES.php
 
+	-- CAMBIAR DE IDIOMA DESDE LA WEB 
+		1. Configurar el fichero "module.config" para usar el parametro "translator" que tenga un valor "gettext" 
+			/opt/lampp/htdocs/zend2/module/Application/config/module.config.php
+		2. Agregar un formulario en el fichero "layout" con el valor del parametro "action"
+			 /opt/lampp/htdocs/zend2/module/Application/view/layout/layout.phtml
+		3. Agregar logica a la funcion "lang" del controlador "index"
+		4. Agregar logica a la funcion "onBootstrap" del fichero "Module.php"
 
-		
+
+	-- INSTALAR MODULOS DE TERCEROS
+		zfmodules.com
 
 
 
