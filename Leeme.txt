@@ -294,12 +294,17 @@ Ianstalacion de ZEND 2.5 (linux)
 			PHPMailer: https://github.com/PHPMailer/PHPMailer
 			PHPThumb: https://github.com/masterexploder/PHPThumb		
 			packagist.org 
-	
+		2. Ejecutar por consola "composer.update"	
+
 	-- UTILIZAR LIBRERIAS PROPIAS
-		
-
-
-
+		1. Crear el directorio "library" en el proyecto
+		2. Crear el fichero (clase) "Ejemplo" dentro del nuevo directorio
+		3. Añadir al fichero "composer.json" el atributo o indice "autoload" e ingresar lo siguiente:	
+			"autoload": {
+				"classmap": ["library/"]
+			}			
+		4. Ejecutar por consola "composer.update"
+	
 
 
 

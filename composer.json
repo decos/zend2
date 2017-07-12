@@ -13,5 +13,8 @@
         "dino/dompdf-module": "dev-master",
         "phpmailer/phpmailer": "~5.2",
         "masterexploder/phpthumb": "dev-master"
+    },
+    "autoload": {
+        "classmap": ["library/"]
     }
 }

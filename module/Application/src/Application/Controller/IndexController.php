@@ -43,12 +43,18 @@ class IndexController extends AbstractActionController
                 //echo "index"; die();
                 return new ViewModel();
         }
-
+        
+        public function helloWorldAction(){
+                $ejemplo = new \Ejemplo();
+                echo $ejemplo->hello();
+                die();
+        }
+        /*
         public function helloWorldAction(){
                 echo "hola mundo! bienvenido al curso de zend framework 2";
                 die();
         }
-        
+        */
         public function formAction(){
                 /*$form = new FormPruebas("form");
                 return new ViewModel(array(
