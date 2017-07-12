@@ -245,7 +245,18 @@ Ianstalacion de ZEND 2.5 (linux)
 			'locale' => 'en_US', // 'es_ES'
 			http://localhost/zend2/public/
 
-		2.
+		2. Traducir cierta cadena de la plantilla "layout.phtml"
+			C:\xampp\htdocs\zend2\module\Application\view\layout\layout.phtml
+			<?php echo $this->translate('Enjoy with this course of ZF2') ?>
+			
+			2.1 Para abrir el proyecto en POEDIT
+				ABRIR > C:\xampp\htdocs\zend2
+				
+			2.2 Para añadir palabras aún no traducidas al listado
+				CATALOGO > PROPIEDADES > RUTAS DE FUENTES > AÑADIR CARPETAS >
+				C:\xampp\htdocs\zend2\module\Application\view
+				
+			2.3 Clic en ACTUALIZAR para actualizar la lista
 
 
 
