@@ -281,7 +281,16 @@ Ianstalacion de ZEND 2.5 (linux)
 
 
 	-- INSTALAR MODULOS DE TERCEROS
-		zfmodules.com
+		1. Ingresar a la sgte página: zfmodules.com
+		2. Escoger un módulo, ejemplo: DOMPDFModule
+		3. Añadir la siguiente línea al "composer.json"
+		4. Ejecutar por consola "composer.update"
+		5. Agregar el modulo al key "modules" del fichero "application.config.php"
+		6. Seguir con la indicaciones de uso en "zfmodules.com"
+
+	-- INSTALAR LIBRERIAS DE PHP
+		
+		
 
 
 
