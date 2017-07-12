@@ -284,12 +284,18 @@ Ianstalacion de ZEND 2.5 (linux)
 		1. Ingresar a la sgte página: zfmodules.com
 		2. Escoger un módulo, ejemplo: DOMPDFModule
 		3. Añadir la siguiente línea al "composer.json"
+			"dino/dompdf-module": "dev-master",
 		4. Ejecutar por consola "composer.update"
 		5. Agregar el modulo al key "modules" del fichero "application.config.php"
 		6. Seguir con la indicaciones de uso en "zfmodules.com"
 
 	-- INSTALAR LIBRERIAS DE PHP
-		
+		1. Agregar las librerias al fichero "composer.json"
+			PHPMailer: https://github.com/PHPMailer/PHPMailer
+			PHPThumb: https://github.com/masterexploder/PHPThumb		
+			packagist.org 
+	
+	-- UTILIZAR LIBRERIAS PROPIAS
 		
 
 
