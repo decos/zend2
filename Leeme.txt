@@ -258,8 +258,18 @@ Ianstalacion de ZEND 2.5 (linux)
 				
 			2.3 Clic en ACTUALIZAR para actualizar la lista
 
-
-
+	-- TRADUCIONES CON UN ARRAY
+		1. Comentar el array que esta dentro de "translation_file_patterns"
+		2. Crear un nuevo array con los siguientes datos:
+			'type'     => 'phparray',
+			'base_dir' => __DIR__ . '/../config/language',
+			'pattern'  => '%s.php'
+			
+		3. Crear el directorio "language"
+			C:\xampp\htdocs\zend2\module\Application\config\language
+			
+		4. Crer el fichero "es_ES.php" y configurar el array
+			C:\xampp\htdocs\zend2\module\Application\config\language\es_ES.php
 
 
 		
