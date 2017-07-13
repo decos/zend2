@@ -214,4 +214,18 @@ class IndexController extends AbstractActionController
                 
         }
         
+        //AJAX
+        public function ajaxAction(){
+                return new ViewModel();
+        }
+        
+        public function loadAction(){
+                if($this->request->isXmlHttpRequest()){
+                        echo "Te devuelvo los datos";
+                        die();
+                } else{
+                        $this->redirect()->toRoute("home");
+                }
+        }
+        
 }

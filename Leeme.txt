@@ -305,8 +305,10 @@ Ianstalacion de ZEND 2.5 (linux)
 			}			
 		4. Ejecutar por consola "composer.update"
 	
-
-
+	-- AJAX
+		1. Crear el fichero "ajax.phtml" dentro de la siguiente ruta:
+			view > index 
+	
 
 
 
