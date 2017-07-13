@@ -308,7 +308,11 @@ Ianstalacion de ZEND 2.5 (linux)
 	-- AJAX
 		1. Crear el fichero "ajax.phtml" dentro de la siguiente ruta:
 			view > index 
-	
+		2. Crear la accion "ajax" en el controlador "index"
+		3. Ingresar a la pagina "https://code.jquery.com/"
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		4. Agregar la lógica al fichero "ajax.phtml"
+		5. Crear la accion "load" en el controlador "index"
 
 
 
