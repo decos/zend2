@@ -228,4 +228,20 @@ class IndexController extends AbstractActionController
                 }
         }
         
+        //COMBINAR VARIAS VISTAS
+        public function plantillasAction(){
+            $view = new ViewModel();
+            
+            $contentView = new ViewModel();
+            $contentView->setTemplate("application/templates/content");
+            
+            $sidebarView = new ViewModel();
+            $sidebarView->setTemplate("application/templates/sidebar");
+            
+            $view->addChild($contentView, "content")
+                 ->addChild($sidebarView, "sidebar");
+            
+            return $view;
+        }
+       
 }

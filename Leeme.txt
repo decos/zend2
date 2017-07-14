@@ -314,7 +314,19 @@ Ianstalacion de ZEND 2.5 (linux)
 		4. Agregar la lógica al fichero "ajax.phtml"
 		5. Crear la accion "load" en el controlador "index"
 
-
+	-- COMBINAR VARIAS VISTAS
+		1. Creamos la accion "plantillas" dentro del controlador "index"
+		2. Creamos el directorio "templates" dentro de view > application
+		3. Dentro del directorio "templates" creamos los ficheros "content" y "sidebar"
+		4. Creamos el fichero "plantillas" dentro de view > application > index
+		5. Añadir la logica a la accion "plantillas"
+		
+		- Tambien se puede combinar vistas haciendo lo siguiente:
+			echo $this->partial("sidebar.phtml");
+			C:\xampp\htdocs\zend2\module\Application\view\application\templates\content.phtml
+			
+		- Si no estuviesen en el mismo directorio seria:
+			echo $this->partial("application/pruebas/sidebar.phtml");
 
 
 
